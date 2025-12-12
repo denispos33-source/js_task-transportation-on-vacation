@@ -9,14 +9,14 @@ function calculateRentalCost(days) {
   const MEDIUM_TERM = 3;
   const LONG_TERM_DISCOUNT = 50;
   const MEDIUM_TERM_DISCOUNT = 20;
-  let totalCost = days * cost;
+  const totalCost = days * cost;
 
   if (days >= LONG_TERM) {
-    totalCost -= LONG_TERM_DISCOUNT;
+    return totalCost - LONG_TERM_DISCOUNT;
   }
 
-  if (days >= MEDIUM_TERM && days < LONG_TERM) {
-    totalCost -= MEDIUM_TERM_DISCOUNT;
+  if (days >= MEDIUM_TERM) {
+    return totalCost - MEDIUM_TERM_DISCOUNT;
   }
 
   return totalCost;
